@@ -2,8 +2,8 @@ import psycopg2
 conn = psycopg2.connect(
    host="localhost",
    database="dict",
-   user="postgres",
-   password="092600"
+   user="user",
+   password="abc123"
 )
 
 print("Welcome to dictionary system. You can choose different commands so as list, add, delete and quit.")
