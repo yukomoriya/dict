@@ -6,7 +6,7 @@ conn = psycopg2.connect(
    password="abc123"
 )
 
-
+print("You can choose different commands so as list, add, delete and quit")
 ## read_dict: returns the list of all dictionary entries:
 # argument: conn - the database connection.
 # Adding more comments about read_dic like reading means listing all the words from dictionary
