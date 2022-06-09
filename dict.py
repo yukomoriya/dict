@@ -1,9 +1,9 @@
 import psycopg2
 conn = psycopg2.connect(
    host="localhost",
-   database="database",
-   user="user",
-   password="abc123"
+   database="dict",
+   user="postgres",
+   password="092600"
 )
 
 print("You can choose different commands so as list, add, delete and quit")
@@ -40,10 +40,10 @@ def main():
         if cmd == "list":
             print(read_dict(conn))
         elif cmd == "add":
-            name = input("  Word: ")
-            phone = input("  Translation: ")
-            add_word(conn, name, phone)
-            print(f"Added word {word}")
+            Word = input("  Word: ")
+            Translation = input("  Translation: ")
+            add_word(conn, Word, Translation)
+            print(f"Added word {Word}, {Translation}")
         elif cmd == "delete":
             ID = input("  ID: ")
             delete_word(conn, ID)
