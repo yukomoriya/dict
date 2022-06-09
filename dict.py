@@ -6,6 +6,7 @@ conn = psycopg2.connect(
    password="abc123"
 )
 
+# Adding more comments about read_dic like reading means listing all the words from dictionary
 def read_dict(C):
     cur = C.cursor()
     cur.execute("SELECT id, word, translation FROM dictionary;")
