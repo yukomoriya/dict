@@ -6,7 +6,7 @@ conn = psycopg2.connect(
    password="092600"
 )
 
-print("You can choose different commands so as list, add, delete and quit")
+print("Welcome to dictionary system. You can choose different commands so as list, add, delete and quit.")
 ## read_dict: returns the list of all dictionary entries:
 # argument: conn - the database connection.
 # Adding more comments about read_dic like reading means listing all the words from dictionary
@@ -36,7 +36,7 @@ def save_dict(conn):
 
 def main():
     while True: ## REPL - Read Execute Program Loop
-        cmd = input("Command: ")
+        cmd = input("Command: ").lower()
         if cmd == "list":
             print(read_dict(conn))
         elif cmd == "add":
