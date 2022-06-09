@@ -10,7 +10,7 @@ conn = psycopg2.connect(
 ## read_dict: returns the list of all dictionary entries:
 # argument: conn - the database connection.
 # Adding more comments about read_dic like reading means listing all the words from dictionary
-
+    
 def read_dict(conn):
     cur = conn.cursor()
     cur.execute("SELECT id, word, translation FROM dictionary;")
@@ -33,20 +33,23 @@ def save_dict(conn):
     cur.execute("COMMIT;")
     cur.close()
 
-while True: ## REPL - Read Execute Program Loop
-    cmd = input("Command: ")
-    if cmd == "list":
-        print(read_dict(conn))
-    elif cmd == "add":
-        name = input("  Word: ")
-        phone = input("  Translation: ")
-        add_word(conn, name, phone)
-        print(f"Added word {word}")
-    elif cmd == "delete":
-        ID = input("  ID: ")
-        delete_word(conn, ID)
-        print(f"Deleted word {ID}")
-    elif cmd == "quit":
-        save_dict(conn)
-        print("Program quits")
-        exit()
+def main():
+    while True: ## REPL - Read Execute Program Loop
+        cmd = input("Command: ")
+        if cmd == "list":
+            print(read_dict(conn))
+        elif cmd == "add":
+            name = input("  Word: ")
+            phone = input("  Translation: ")
+            add_word(conn, name, phone)
+            print(f"Added word {word}")
+        elif cmd == "delete":
+            ID = input("  ID: ")
+            delete_word(conn, ID)
+            print(f"Deleted word {ID}")
+        elif cmd == "quit":
+            save_dict(conn)
+            print("Program quits")
+            break
+
+main()
