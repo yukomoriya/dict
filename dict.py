@@ -2,7 +2,7 @@ import psycopg2
 conn = psycopg2.connect(
    host="localhost",
    database="dict",
-   user="user",
+   user="dict",
    password="abc123"
 )
 
